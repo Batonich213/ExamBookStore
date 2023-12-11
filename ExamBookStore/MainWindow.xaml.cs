@@ -21,6 +21,8 @@ namespace ExamBookStore
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        AppContext db;
         public MainWindow()
         {
             InitializeComponent();
@@ -28,20 +30,35 @@ namespace ExamBookStore
             MaxHeight = 585;
             MinHeight = 585;
             MinWidth = 300;
-           // Rememb.Checked = Properties.Settings.Default.IsRemember;
+        db = new AppContext();
+
         }
 
-        private void Button_Registr_Click(object sender, RoutedEventArgs e)
+        private void Button_Join_Click(object sender, RoutedEventArgs e)
         {
             string login = loginBox.Text.Trim();
             string password = pwdBox.Password.Trim();
+
+            User authUser = null;
+            // using (AppContext context = new AppContext())
+            //{
+             //   authUser = context.Users.Where(a => a.Login == login && a.Password == password).FirstOrDefault();
+            //}
+            if (authUser != null )
+            {
+                MessageBox.Show("All good");
+            }
+            else
+            {
+                MessageBox.Show("Uncorrect");
+            }
             
             
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            Properties.Settings.Default.Save();
+            
         }
     }
 }

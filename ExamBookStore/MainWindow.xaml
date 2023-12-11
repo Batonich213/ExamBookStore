@@ -17,7 +17,7 @@
         
         
         <TextBlock HorizontalAlignment="Left" Margin="46,20,0,0" TextWrapping="NoWrap" Text="Авторизация" VerticalAlignment="Top" Height="48" Width="244" FontFamily="Yu Gothic UI Semibold" FontSize="30" />
-        <Button Content="Войти" HorizontalAlignment="Center" Margin="0,438,0,0" VerticalAlignment="Top" Width="190" Height="44" Background="#FF156873" Cursor="Hand" Click="Button_Registr_Click">
+        <Button Content="Войти" HorizontalAlignment="Center" Margin="0,438,0,0" VerticalAlignment="Top" Width="190" Height="44" Background="#FF156873" Cursor="Hand" Click="Button_Join_Click">
 
         </Button>
         
