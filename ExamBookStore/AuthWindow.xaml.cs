@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MaterialDesignColors;
 
 
 namespace ExamBookStore
@@ -23,6 +24,8 @@ namespace ExamBookStore
     {
 
         AppContext db;
+
+      
         public MainWindow()
         {
             InitializeComponent();
@@ -40,25 +43,29 @@ namespace ExamBookStore
             string password = pwdBox.Password.Trim();
 
             User authUser = null;
-            // using (AppContext context = new AppContext())
-            //{
-             //   authUser = context.Users.Where(a => a.Login == login && a.Password == password).FirstOrDefault();
-            //}
+             using (AppContext db = new AppContext())
+            { 
+                authUser = db.Users.Where(a => a.Login == login && a.Password == password).FirstOrDefault();
+
+            }
             if (authUser != null )
             {
                 MessageBox.Show("All good");
             }
             else
             {
-                MessageBox.Show("Uncorrect");
+                uncorrect.Visibility = Visibility.Visible;
+                
             }
-            
-            
+
+
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
             
         }
+
+      
     }
 }

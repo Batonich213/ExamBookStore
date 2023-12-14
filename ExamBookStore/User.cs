@@ -8,21 +8,8 @@ namespace ExamBookStore
 {
     internal class User
     {
-        private int id { get; set; }
-        private string login, password;
-
-
-        public string Login { get { return login; } set { login = value; } }
-
-        public string Password { get { return password; } set { password = value; } }
-
-        public User() { }
-
-        public User(string login, string password)
-        {
-            this.id = id;
-            this.login = login;
-            this.password = password;
-        }
+       public int Id { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
     }
 }
