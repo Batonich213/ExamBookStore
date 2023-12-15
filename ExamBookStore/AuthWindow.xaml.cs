@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -34,7 +35,7 @@ namespace ExamBookStore
             MinHeight = 585;
             MinWidth = 300;
         db = new AppContext();
-
+            
         }
 
         private void Button_Join_Click(object sender, RoutedEventArgs e)
@@ -48,9 +49,15 @@ namespace ExamBookStore
                 authUser = db.Users.Where(a => a.Login == login && a.Password == password).FirstOrDefault();
 
             }
-            if (authUser != null )
+            if (authUser != null)
             {
-                MessageBox.Show("All good");
+
+                MainWindow main = new MainWindow();
+
+                 this.Hide();
+                 main.Show();
+                 this.Close();
+
             }
             else
             {
@@ -61,10 +68,6 @@ namespace ExamBookStore
 
         }
 
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            
-        }
 
       
     }

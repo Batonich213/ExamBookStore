@@ -22,6 +22,12 @@ namespace ExamBookStore
         public MainWindow()
         {
             InitializeComponent();
+
+            AppContext db = new AppContext();
+            List<User> users = db.Users.ToList();
+
+            listUsers.ItemsSource = users;
+           
         }
     }
 }

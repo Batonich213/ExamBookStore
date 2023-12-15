@@ -7,6 +7,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Border>
+            <ListView x:Name="listUsers" Margin="10">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel>
+                            <TextBlock Text="Login: "/>
+                            <TextBlock Text="{Binding Login}" FontWeight="Bold"/>
+                            <TextBlock Text=", " />
+                            <TextBlock Text="{Binding Password}" />
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Border>
         
+
     </Grid>
+
+
 </Window>
