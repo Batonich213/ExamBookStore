@@ -15,6 +15,10 @@ namespace ExamBookStore
     {
         public DbSet<User> Users => Set<User>();
 
+        public DbSet<Books> Books => Set<Books>();
+
+        public static object User { get; internal set; }
+
         public AppContext() =>  Database.EnsureCreated();
         
 

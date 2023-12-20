@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,18 +25,27 @@ namespace ExamBookStore
     public partial class AuthWindow : Window
     {
 
-        AppContext db;
+        AppContext db = new AppContext();
 
       
         public AuthWindow()
         {
-            InitializeComponent();
+                InitializeComponent();
+            int UserCount = db.Users.Count<User>();
+            if (UserCount == 0)
+            {
+                User user = new User("user", "1234");
+                db.Users.Add(user);
+                db.SaveChanges();
+            }
             MaxWidth = 300;
             MaxHeight = 585;
             MinHeight = 585;
             MinWidth = 300;
-        db = new AppContext();
             
+                
+            
+
         }
 
         private void Button_Join_Click(object sender, RoutedEventArgs e)
