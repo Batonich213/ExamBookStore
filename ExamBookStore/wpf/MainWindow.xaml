@@ -10,7 +10,10 @@
     <Grid>
         <TabControl>
             <TabItem Header="Книги" FontFamily="Yu Gothic UI Semibold" FontSize="20">
-                <Grid />
+                <Grid>
+                    
+                    
+                </Grid>
 
             </TabItem>
             <TabItem Header="Скидки и акции" FontFamily="Yu Gothic UI semibold" FontSize="20">
@@ -18,14 +21,28 @@
                 <Grid />
             </TabItem>
             <TabItem
-                Header="Добавить книгу"
+                Header="Добавить/удалить книгу"
                 FontFamily="Yu Gothic UI semibold"
                 FontSize="20">
                 <Grid>
-                    <Button Content="Добавить" HorizontalAlignment="Left" Margin="628,331,0,0" VerticalAlignment="Top" Height="45" Width="148" Click="Button_Click"/>
-                    <TextBox x:Name="BooksName" materialDesign:HintAssist.Hint="Введите название книги" HorizontalAlignment="Center" Margin="0,55,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="348" Height="34" Background="{x:Null}"/>
-                    <TextBox x:Name="ReleaseYear" materialDesign:HintAssist.Hint="Введите год выпуска" HorizontalAlignment="Center" Margin="0,155,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="348" Height="34" Background="{x:Null}"/>
-                    <TextBox x:Name="Publisher" materialDesign:HintAssist.Hint="Введите издателя" HorizontalAlignment="Center" Margin="0,255,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="348" Height="34" Background="{x:Null}"/>
+                    
+                    <TabControl>
+                        <TabItem Header="Добавить" Background="Aqua">
+                            <Grid >
+                                <Button Content="Добавить" HorizontalAlignment="Left" Margin="626,333,0,0" VerticalAlignment="Top" Height="45" Width="148" Click="Add_Click"/>
+                                <TextBox x:Name="BooksName" materialDesign:HintAssist.Hint="Введите название книги" HorizontalAlignment="Center" Margin="0,55,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="348" Height="34" Background="{x:Null}"/>
+                                <TextBox x:Name="ReleaseYear" materialDesign:HintAssist.Hint="Введите год выпуска" HorizontalAlignment="Center" Margin="0,155,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="348" Height="34" Background="{x:Null}"/>
+                                <TextBox x:Name="Publisher" materialDesign:HintAssist.Hint="Введите издателя" HorizontalAlignment="Center" Margin="0,255,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="348" Height="34" Background="{x:Null}"/>
+                                </Grid>
+                        </TabItem>
+                        <TabItem Header="Удалить" Background="Aqua">
+                            <Grid >
+                                <Button Content="Удалить" HorizontalAlignment="Left" Margin="629,308,0,0" VerticalAlignment="Top" Height="45" Width="148" Click="Remove_Click"/>
+                                <TextBox x:Name="BookID" materialDesign:HintAssist.Hint="ID книги" HorizontalAlignment="Center" Margin="0,122,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="348" Height="34" Background="{x:Null}"/>
+                                
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
                 </Grid>
             </TabItem>
             <TabItem

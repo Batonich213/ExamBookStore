@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
+using System.Runtime.CompilerServices;
 
 namespace ExamBookStore
 {
@@ -15,7 +16,9 @@ namespace ExamBookStore
     {
         public DbSet<User> Users => Set<User>();
 
-        public DbSet<Books> Books => Set<Books>();
+        public DbSet<Book> Book => Set<Book>();
+
+        public DbSet<Discount> Discount => Set<Discount>();
 
         public static object User { get; internal set; }
 
@@ -31,3 +34,12 @@ namespace ExamBookStore
         }
     }
 }
+
+//
+// 
+//
+//
+//
+//
+//
+//

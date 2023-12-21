@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,19 +27,19 @@ namespace ExamBookStore
         {
             InitializeComponent();
 
-            MaxHeight = 500;
+            MaxHeight = 550;
             MaxWidth = 800;
-            MinHeight = 500;
+            MinHeight = 550;
             MinWidth = 800;
 
             db = new AppContext();
             
 
-            //listUsers.ItemsSource = users;
+          
            
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Add_Click(object sender, RoutedEventArgs e)
         {
 
             string publisher = Publisher.Text;
@@ -49,16 +50,70 @@ namespace ExamBookStore
             {
                 MessageBox.Show("Вы ввели некорректную дату");
             }
+            else
+            {
 
-            Books book = new Books(releaseYear, bookName, publisher);
+            Book book = new Book(releaseYear, bookName, publisher);
 
-          
+ 
+                using (AppContext db = new AppContext())
+                {
 
-            db.Books.Add(book);
-            db.SaveChanges();
+                db.Book.Add(book);
+
+                    
+                    db.SaveChanges();
+                }
+                MessageBox.Show("Книга успешно добавлена");
+               
+               
+
+            }
 
         }
 
- 
+        private void Remove_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int? ID = Convert.ToInt32(BookID.Text);
+                Book bookID = null;
+               
+                using (AppContext db = new AppContext())
+                {
+
+                    bookID = db.Book.Where(b => b.Id == ID).FirstOrDefault();
+
+                }
+                if (bookID == null)
+                {
+                    MessageBox.Show("Такой книги нет");
+                }
+                else
+                {
+                    MessageBox.Show("Книга успешно удалена");
+
+                    using(AppContext db = new AppContext())
+                    {
+
+                    db.Book.Remove(bookID);
+                    db.SaveChanges();
+                    }
+
+
+                }
+
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+
+
+        }
     }
 }

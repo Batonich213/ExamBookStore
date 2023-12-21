@@ -243,7 +243,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ApplicatiponContext\Books.cs" />
+    <Compile Include="ApplicatiponContext\Book.cs" />
+    <Compile Include="ApplicatiponContext\Discounts.cs" />
     <Compile Include="wpf\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
