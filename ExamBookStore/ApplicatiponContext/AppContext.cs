@@ -34,12 +34,3 @@ namespace ExamBookStore
         }
     }
 }
-
-//
-// 
-//
-//
-//
-//
-//
-//

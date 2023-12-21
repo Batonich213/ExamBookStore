@@ -91,7 +91,6 @@ namespace ExamBookStore
                 }
                 else
                 {
-                    MessageBox.Show("Книга успешно удалена");
 
                     using(AppContext db = new AppContext())
                     {
@@ -100,11 +99,9 @@ namespace ExamBookStore
                     db.SaveChanges();
                     }
 
+                    MessageBox.Show("Книга успешно удалена");
 
                 }
-
-
-
 
 
             }
