@@ -14,13 +14,7 @@ namespace ExamBookStore
         public User(string login, string password)
         {
             this.Login = login;
-            this.Password = password;
-            
+            this.Password = password;   
         }
-
     }
-
-
-
-
 }

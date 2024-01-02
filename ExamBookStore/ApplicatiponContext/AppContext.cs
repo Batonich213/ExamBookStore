@@ -15,16 +15,10 @@ namespace ExamBookStore
     internal class AppContext : DbContext
     {
         public DbSet<User> Users => Set<User>();
-
         public DbSet<Book> Book => Set<Book>();
-
         public DbSet<Discount> Discount => Set<Discount>();
-
-        public static object User { get; internal set; }
-
+        public static object User { get; internal set;}
         public AppContext() =>  Database.EnsureCreated();
-        
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

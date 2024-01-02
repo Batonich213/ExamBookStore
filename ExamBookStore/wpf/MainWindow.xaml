@@ -11,13 +11,20 @@
         <TabControl>
             <TabItem Header="Книги" FontFamily="Yu Gothic UI Semibold" FontSize="20">
                 <Grid>
-                    
-                    
+                    <ListView  FontSize="16" x:Name="ListBooks" >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn x:Name ="SortID"  DisplayMemberBinding="{Binding Id}" Header="ID" Width="160" ></GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Название"  Width="160" ></GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Price}" Header="Цена"  Width="160" ></GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding ReleaseYear}" Header="Год выпуска"  Width="160" ></GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Publisher}" Header="Издатель"  Width="160" ></GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
                 </Grid>
-
             </TabItem>
             <TabItem Header="Скидки и акции" FontFamily="Yu Gothic UI semibold" FontSize="20">
-
                 <Grid />
             </TabItem>
             <TabItem
@@ -25,21 +32,22 @@
                 FontFamily="Yu Gothic UI semibold"
                 FontSize="20">
                 <Grid>
-                    
+
                     <TabControl>
                         <TabItem Header="Добавить" Background="Aqua">
                             <Grid >
                                 <Button Content="Добавить" HorizontalAlignment="Left" Margin="626,333,0,0" VerticalAlignment="Top" Height="45" Width="148" Click="Add_Click"/>
-                                <TextBox x:Name="BooksName" materialDesign:HintAssist.Hint="Введите название книги" HorizontalAlignment="Center" Margin="0,55,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="348" Height="34" Background="{x:Null}"/>
-                                <TextBox x:Name="ReleaseYear" materialDesign:HintAssist.Hint="Введите год выпуска" HorizontalAlignment="Center" Margin="0,155,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="348" Height="34" Background="{x:Null}"/>
-                                <TextBox x:Name="Publisher" materialDesign:HintAssist.Hint="Введите издателя" HorizontalAlignment="Center" Margin="0,255,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="348" Height="34" Background="{x:Null}"/>
-                                </Grid>
+                                <TextBox x:Name="TextBooksName" materialDesign:HintAssist.Hint="Введите название книги" HorizontalAlignment="Left" Margin="33,109,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="348" Height="34" Background="{x:Null}"/>
+                                <TextBox x:Name="TextReleaseYear" materialDesign:HintAssist.Hint="Введите год выпуска" HorizontalAlignment="Left" Margin="33,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Center" Width="348" Height="41" Background="{x:Null}"/>
+                                <TextBox x:Name="TextPublisher" materialDesign:HintAssist.Hint="Введите издателя" HorizontalAlignment="Left" Margin="400,109,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="348" Height="34" Background="{x:Null}"/>
+                                <TextBox x:Name="TextPrice" materialDesign:HintAssist.Hint="Введите стоимость книги" HorizontalAlignment="Left" Margin="400,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Center" Width="348" Height="41" Background="{x:Null}"/>
+                            </Grid>
                         </TabItem>
                         <TabItem Header="Удалить" Background="Aqua">
                             <Grid >
                                 <Button Content="Удалить" HorizontalAlignment="Left" Margin="629,308,0,0" VerticalAlignment="Top" Height="45" Width="148" Click="Remove_Click"/>
                                 <TextBox x:Name="BookID" materialDesign:HintAssist.Hint="ID книги" HorizontalAlignment="Center" Margin="0,122,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="348" Height="34" Background="{x:Null}"/>
-                                
+
                             </Grid>
                         </TabItem>
                     </TabControl>
